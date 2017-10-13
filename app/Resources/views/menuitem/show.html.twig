@@ -1,0 +1,68 @@
+{% extends 'base1.html.twig' %}
+
+{% block body %}
+<section id="container" >
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <!--state overview start-->
+            <!-- Aqui incrustamos el codigo que generamos del comando de crud -->
+
+  <div class="container">
+      <h1>Menu</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ menuItem.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha de creacion</th>
+                <td>{% if menuItem.createdAt %}{{ menuItem.createdAt|date('Y-m-d ') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nombre Menu</th>
+                <td>{{ menuItem.nombremenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+<ul>
+
+        <li>
+            <a  class="btn btn-info" href="{{ path('menuitem_edit', { 'id': menuItem.id }) }}">Edit</a>
+            <br/>
+            {{ form_start(delete_form) }}
+                <input  class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+        <br/>
+        <li>
+
+        </li>
+        <li>
+            <a  class="btn btn-secondary" href="{{ path('menuitem_index') }}">Back to the list</a>
+        </li>
+    </ul>
+</div>
+            <!-- Aqui termina la inscrustacion del codigo -->
+            </div>
+        </section>
+
+      </div>
+
+  <div class="modal-footer">
+        CIDES 2017
+  </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Observacion -->
+
+
+
+
+
+
+{% endblock %}

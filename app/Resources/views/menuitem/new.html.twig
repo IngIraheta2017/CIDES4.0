@@ -1,0 +1,53 @@
+{% extends 'base1.html.twig' %}
+
+{% block body %}
+<section id="container" >
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <!--state overview start-->
+            <!-- Aqui incrustamos el codigo que generamos del comando de crud -->
+              <h1>Nuevo Menu</h1>
+  <div class="container">
+    {{ form_start(form) }}
+            <div class="form-group">
+              {{ form_widget(form.nombremenu, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Nombre Menu'} }) }}
+              <span class="text-danger">{{ form_errors(form.nombremenu) }}</span>
+          </div>
+          <div class="form-group">
+             {{ form_widget(form.parent_menu, {'attr': {'class': 'form-control', 'style':'resize:horizontal', width:'200%' }}) }}
+            <span class="text-danger">{{ form_errors(form.parent_menu) }}</span>
+        </div>
+        <a  class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-ok"></span>   <input type="submit" value="Create" class="btn btn-info btn-lg"/>
+        </a>
+
+    {{ form_end(form) }}
+  </div>
+    <ul>
+        <li>
+            <a href="{{ path('menuitem_index') }}" >Back to the list</a>
+        </li>
+    </ul>
+            <!-- Aqui termina la inscrustacion del codigo -->
+            </div>
+        </section>
+
+      </div>
+
+  <div class="modal-footer">
+        CIDES 2017
+  </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Observacion -->
+
+
+
+
+
+
+{% endblock %}
